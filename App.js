@@ -16,8 +16,13 @@ Ext.define('CustomApp', {
           listeners: {
               load: function(myStore, myData, success) {
                 console.log('Data read!', myStore, myData, success);
-                rallyApp._loadGrid(myStore);
+                //rallyApp._loadGrid(myStore);
+                this._loadGrid(myStore);
               },
+              //sets the scope when the store is created
+              //in this case, this refers to RallyApp
+              console.log("what is this=", this.__proto__.$className)
+              scope: this
           },
           fetch: ['FormattedID', 'Name', 'Description','PlanEstimate', 'ScheduleState']
       });
