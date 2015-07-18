@@ -11,7 +11,7 @@ Ext.define('CustomApp', {
     },
     _loadData: function(){
       var myStore1 = Ext.create('Rally.data.wsapi.Store', {
-          model: 'User Story',
+          model: 'Defect',
           autoLoad: true,
           listeners: {
               load: function(myStore, myData, success) {
